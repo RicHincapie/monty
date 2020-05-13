@@ -8,8 +8,6 @@ int main(int argc, char *argv[])
 	ssize_t read;
 	char * sentence = NULL;
 	char * op_code = NULL;
-	char * error = NULL;
-	char * tmp = NULL;
 	unsigned int line_number = 1;
 	stack_t *top = NULL;
 
@@ -27,14 +25,9 @@ int main(int argc, char *argv[])
 	{
 		sentence = line;
 		op_code = strtok(sentence, "\n ");
-		tmp = strtok(NULL, "\n ");/*Takes in a char*/
-		argument = tmp; /*Cast to const char & It is atoi() in each exe func*/
-		if (error = strtok(NULL, "\n ") != NULL)
-		{
-			exit(EXIT_FAILURE)
-			/* Needs to set ERROR_handling function*/ 
-		}
-		top = search_exec(op_code, line_number);
+		argument = strtok(NULL, "\n ");/*Takes in a char*/
+		/*Cast to const char & It is atoi() in each exe func*/
+		top = search_exec(&top, op_code, line_number);
 		line_number++;
 		/*printf("%s", line);*/ 
 		

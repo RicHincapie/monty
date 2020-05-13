@@ -6,6 +6,7 @@ void exec_push(stack_t **top, unsigned int line_number)
 	int argument_atoi = 0;
 	int result = 0; /* checks for argument only numbers*/
 
+	line_number += 0;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
@@ -19,14 +20,14 @@ void exec_push(stack_t **top, unsigned int line_number)
 	{
 		/* ERROR_handling*/
 	}
-	argument_atoi = atoi(argument);/* ¿push 4fhhjs4? TEST atoi cases */
+	argument_atoi = atoi(argument);/* check ¿push 4fhhjs4? TEST atoi cases */
 	new_node->n = argument_atoi;
-	if (*top == NULL)/* If stack is empty */
+	if (*top != NULL)/* If stack is empty */
 	{
+		(*top)->prev = new_node;
+		new_node->next = *top;
 		*top = new_node;
 	}
-	(*top)->prev = new_node;
-	new_node->next = *top;
 	*top = new_node;
 }
 

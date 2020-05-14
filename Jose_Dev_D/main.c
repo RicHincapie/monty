@@ -1,12 +1,17 @@
 #include "monty.h"
-
-int main(int argc, char *argv[])
+/**
+ * main - monty main function
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: void
+ */
+void main(int argc, char *argv[])
 {
 	unsigned int line_number = 1;
 	size_t len = 0;
 	ssize_t read;
 	FILE *fp;
-	char * line = NULL, *sentence = NULL;
+	char *line = NULL, *sentence = NULL;
 	char *file_name, *op_code;
 	stack_t *top = NULL;
 

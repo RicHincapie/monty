@@ -1,4 +1,4 @@
-#ifndef MONTY_H 
+#ifndef MONTY_H
 #define MONTY_H
 
 /* LIBRARIES INCLUDED */
@@ -20,9 +20,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,29 +35,39 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+/**
+ * struct global_awesome - contains variables to be used as global
+ * @ar: the argument of the opcode
+ * @line: buffer in which saved each line of the open file
+ * @fp: file descriptor
+ * Description: helps to use variables through different files
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
 typedef struct global_awesome
 {
-        char *ar;
-        char *line;
-        FILE *fp;
+	char *ar;
+	char *line;
+	FILE *fp;
 } global_awesome;
 
 /* EXTERNAL VARIABLES */
 /* char *argument; */
 global_awesome *s;
 
-
 /* FUNCTION PROTOTYPES */
-int main(int argc, char *argv[]);
+void main(int argc, char *argv[]);
 stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number);
 void exec_push(stack_t **top, unsigned int line_number);
 void exec_pall(stack_t **top, unsigned int line_number);
 int argument_checker(unsigned int line_number, stack_t **top);
 void errorhandling(int flag, unsigned int line_number, stack_t **top);
 void freedom(stack_t **top, int flag);
-
+void exec_pint(stack_t **top, unsigned int line_number);
+void exec_pop(stack_t **top, unsigned int line_number);
+void exec_swap(stack_t **top, unsigned int line_number);
+void exec_add(stack_t **top, unsigned int line_number);
+void exec_nop(stack_t **top, unsigned int line_number);
 #endif

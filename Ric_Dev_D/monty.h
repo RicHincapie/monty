@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 /**
@@ -39,13 +40,17 @@ typedef struct instruction_s
 } instruction_t;
 
 /* EXTERNAL VARIABLES */
-extern const char* argument = NULL;
+char *argument;
+char *file_name;
+char *op_code;
 
 
 /* FUNCTION PROTOTYPES */
 int main(int argc, char *argv[]);
-stack_t *search_exec(char *op_code, unsigned int line_number);
+stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number);
 void exec_push(stack_t **top, unsigned int line_number);
-
+void exec_pall(stack_t **top, unsigned int line_number);
+int argument_checker(unsigned int line_number);
+void errorhandling(int flag, unsigned int line_number);
 
 #endif

@@ -33,7 +33,7 @@ void exec_push(stack_t **top, unsigned int line_number)
 int argument_checker()
 {
 	int i = 0;
-
+	
 	while(argument[i] != '\0')
 	{
 		if(argument[i] < 48 || argument[i] > 57)

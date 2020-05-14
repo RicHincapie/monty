@@ -39,10 +39,16 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct global_awesome
+{
+        char *ar;
+        char *line;
+        FILE *fp;
+} global_awesome;
+
 /* EXTERNAL VARIABLES */
-char *argument;
-char *file_name;
-char *op_code;
+/* char *argument; */
+global_awesome *s;
 
 
 /* FUNCTION PROTOTYPES */
@@ -50,7 +56,8 @@ int main(int argc, char *argv[]);
 stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number);
 void exec_push(stack_t **top, unsigned int line_number);
 void exec_pall(stack_t **top, unsigned int line_number);
-int argument_checker(unsigned int line_number);
-void errorhandling(int flag, unsigned int line_number);
+int argument_checker(unsigned int line_number, stack_t **top);
+void errorhandling(int flag, unsigned int line_number, stack_t **top);
+void freedom(stack_t **top, int flag);
 
 #endif

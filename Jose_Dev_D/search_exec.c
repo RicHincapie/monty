@@ -18,9 +18,7 @@ stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number)
                 i++;
         }
         if (i == 2)/*It deppends on the # of opcodes available in funct_arrays*/
-        {
-                /* error_handling(); */
+                errorhandling(3, line_number);
                 /* ERROR_handling function */
-        }
         return(*top);
 }

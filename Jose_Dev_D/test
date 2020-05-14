@@ -1,2 +1,4 @@
-#!/usr/bin/env bash
-echo Hola
+push 1
+push 2
+push 3
+pall

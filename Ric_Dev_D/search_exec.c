@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number)
+stack_t *search_exec(stack_t **top, char *op_code, unsigned int ln)
 {
         int i = 0;
 
@@ -13,12 +13,20 @@ stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number)
         {
                 if(strcmp(funct_arrays[i].opcode, op_code) == 0)
                 {
-                    funct_arrays[i].f(&(*top), line_number);
+                    funct_arrays[i].f(&(*top), ln);
+                    break;
                 }
                 i++;
         }
         if (i == 2)/*It deppends on the # of opcodes available in funct_arrays*/
-                errorhandling(3, line_number);
-                /* ERROR_handling function */
+        {
+                fprintf(stderr, "L%d: unknown instruction %s\n", ln, op_code);
+                if (top != NULL)
+                        freedom(top, 0);
+                free(s->line);
+                fclose(s->fp);
+                free(s);
+                exit(EXIT_FAILURE);
+        }
         return(*top);
 }

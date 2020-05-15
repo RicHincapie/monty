@@ -40,6 +40,10 @@ void errorhandling(int flag, unsigned int line_number, stack_t **top)
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 	else if (flag == 14)
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+	else if (flag == 15)
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+	else if (flag == 16)
+		fprintf(stderr, "L%d: can't pchar, value out of range", line_number);
 	freedom(top, 1);
 	exit(EXIT_FAILURE);
 }

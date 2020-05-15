@@ -73,4 +73,6 @@ void exec_nop(stack_t **top, unsigned int line_number);
 void exec_sub(stack_t **top, unsigned int line_number);
 void exec_div(stack_t **top, unsigned int line_number);
 void exec_mul(stack_t **top, unsigned int line_number);
+void exec_mod(stack_t **top, unsigned int line_number);
+
 #endif

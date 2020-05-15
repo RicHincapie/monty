@@ -20,6 +20,7 @@ stack_t *search_exec(stack_t **top, char *op_code, unsigned int ln)
 		{"nop", exec_nop},
 		{"sub", exec_sub},
 		{"div", exec_div},
+		{"mul", exec_mul},
 		{NULL, NULL}
 	};
 	while (funct_arrays[i].opcode != NULL)
@@ -31,7 +32,7 @@ stack_t *search_exec(stack_t **top, char *op_code, unsigned int ln)
 		}
 		i++;
 	}
-	if (i == 9)/*It deppends on the # of opcodes available in funct_arrays*/
+	if (i == 10)/*It deppends on the # of opcodes available in funct_arrays*/
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", ln, op_code);
 		if (top != NULL)

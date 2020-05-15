@@ -35,7 +35,9 @@ void errorhandling(int flag, unsigned int line_number, stack_t **top)
 	else if (flag == 11)
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 	else if (flag == 12)
-		fprintf(stderr, "L%d: division by zero\n", line_number);	
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+	else if (flag == 13)
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 	freedom(top, 1);
 	exit(EXIT_FAILURE);
 }

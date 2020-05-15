@@ -5,7 +5,7 @@
  * @argv: array of arguments
  * Return: void
  */
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	unsigned int line_number = 1;
 	size_t len = 0;

@@ -58,7 +58,7 @@ typedef struct global_awesome
 global_awesome *s;
 
 /* FUNCTION PROTOTYPES */
-void main(int argc, char *argv[]);
+int main(int argc, char *argv[]);
 stack_t *search_exec(stack_t **top, char *op_code, unsigned int line_number);
 void exec_push(stack_t **top, unsigned int line_number);
 void exec_pall(stack_t **top, unsigned int line_number);

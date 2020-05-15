@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * exec_push - execute push opcode
+ * @top: pointer to the top of stack
+ * @line_number: number of line in the file
+ * Return: void
+ */
 void exec_push(stack_t **top, unsigned int line_number)
 {
 	stack_t *new_node = NULL;
@@ -27,19 +32,24 @@ void exec_push(stack_t **top, unsigned int line_number)
 	}
 	*top = new_node;
 }
-
+/**
+ * argument_checker - check if the argument is an integer
+ * @line_number: number of line in the open file
+ * @top: pointer to the top of the stack
+ * Return: 1 if is a number otherwise 0
+ */
 int argument_checker(unsigned int line_number, stack_t **top)
 {
 	int i = 0;
 
 	if (s->ar == NULL)
 		errorhandling(5, line_number, top);
-	while(s->ar[i] != '\0')
+	while (s->ar[i] != '\0')
 	{	/*Cheking if it's a letter and not equal to <->*/
-		if((s->ar[i] < 48 || s->ar[i] > 57) && s->ar[i] != 45)
-			return(0);
+		if ((s->ar[i] < 48 || s->ar[i] > 57) && s->ar[i] != 45)
+			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }
 

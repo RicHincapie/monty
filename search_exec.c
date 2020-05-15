@@ -22,6 +22,7 @@ stack_t *search_exec(stack_t **top, char *op_code, unsigned int ln)
 		{"div", exec_div},
 		{"mul", exec_mul},
 		{"mod", exec_mod},
+		{"#", exec_nop},
 		{NULL, NULL}
 	};
 	while (funct_arrays[i].opcode != NULL)

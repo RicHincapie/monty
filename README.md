@@ -50,7 +50,7 @@ sample_func(char suffix)
         break;
      }
 }
-```
+
 #### Lenght of lines
 The limit on the length of lines is **80 columns** and this is a strongly preferred limit.
 
@@ -72,9 +72,9 @@ Ricardo Hincapie - Software Developer - [@RicarHincapie](https://www.linkedin.co
 
 > :rocket: Let's follow each other on [Github](https://github.com/ricarhincapie)
 
-Juan Felipe Bustamante - Software Developer - [@PipeBustamante](https://www.linkedin.com/in/pipebustamantem/)
+Jose Alonso Restrepo Vidal - Software Developer - [@joserestrepo98](https://www.linkedin.com/in/joserestrepo98/)
 
-> :rocket: Let's connect! [Github](https://github.com/jfbm74)
+> :rocket: Let's connect! [Github](https://github.com/JoseR98)
 
 See also the list of contributors who participated in this project.
 
